@@ -154,6 +154,72 @@
             font-weight: 700;
         }
 
+        .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #ed507e;
+            margin-bottom: 10px;
+        }
+
+        #team .section-label {
+            color: #ed507e;
+        }
+
+        .usp-card {
+            padding: 32px 28px;
+            border-left: 3px solid #ed507e;
+            height: 100%;
+        }
+
+        .usp-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .team-card {
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-photo-wrap {
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0 auto 14px;
+            border: 2px solid rgba(237,80,126,0.4);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
+        }
+
+        .team-info {
+            padding: 0 4px;
+        }
+
+        .team-role {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ed507e;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .team-bio {
+            font-style: italic !important;
+            margin-top: 6px;
+        }
+
         .masthead img {
             max-width: 360px;
         }
@@ -264,21 +330,24 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">Aanpak</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Diensten</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#usps">Voordelen</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#process">Aanpak</a>
-                    </li>
                      <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="#contact">Contact</a>
+                        <a class="nav-link btn btn-primary text-white px-4 py-2 ms-3" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -287,16 +356,19 @@
 
     <header class="masthead text-white text-center pb-4">
 
-        <div class="container pt-2 pb-4" data-aos="fade-up">
-            <h1 class="display-4 mb-3">Managed Kubernetes<br>maar dan <img src="img/noBgColor.svg" alt="BETER" style="height: 1.0em; position: relative; top: -0.1em;"></h1>
+        <div class="container pt-3 pb-4" data-aos="fade-up">
+            <span class="section-label" style="color: rgba(237,80,126,0.8);">Jouw platformteam op afstand</span>
+            <h1 class="display-4 mb-3 mt-2">Managed Kubernetes<br>maar dan <img src="img/noBgColor.svg" alt="BETER" style="height: 1.0em; position: relative; top: -0.1em;"></h1>
+            <p class="lead text-white-50 mt-3">Wij deployen én beheren Kubernetes bij jouw eigen cloud provider.</p>
         </div>
     </header>
 
-    <section id="intro" class="py-5 bg-light">
+    <section id="intro" class="py-5 bg-white">
         <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h2 class="text-center mb-4"><span class="beter">BETER</span> zet code weer op één</h2>
+                    <span class="section-label d-block text-center">Waarom BETER</span>
+                    <h2 class="text-center mb-4">Kubernetes expertise, direct beschikbaar</h2>
                     <div class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
                         <p>Kubernetes is krachtig, maar zelf de inrichting én het beheer doen kost tijd en aandacht. In veel ontwikkelteams komt het neer op "die ene developer die het erbij doet". Dat is risicovol voor je business.</p>
                         
@@ -309,9 +381,47 @@
         </div>
     </section>
 
+    <section id="process" class="py-5 bg-light">
+        <div class="container">
+            <span class="section-label d-block text-center" data-aos="fade-up">Hoe het werkt</span>
+            <h2 class="text-center mb-5" data-aos="fade-up">In vier stappen operationeel</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
+                        <i class="bi bi-chat-dots display-6"></i>
+                    </div>
+                    <h5 class="fw-bold">1. Intake</h5>
+                    <p class="text-muted small">We checken samen je situatie en wensen.</p>
+                </div>
+                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
+                        <i class="bi bi-gear-wide-connected display-6"></i>
+                    </div>
+                    <h5 class="fw-bold">2. Inrichting</h5>
+                    <p class="text-muted small">Wij bouwen het cluster volgens onze best practices.</p>
+                </div>
+                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
+                        <i class="bi bi-flag-fill display-6"></i>
+                    </div>
+                    <h5 class="fw-bold">3. Oplevering</h5>
+                    <p class="text-muted small">Het cluster staat klaar en is getest. Jij gaat live.</p>
+                </div>
+                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
+                        <i class="bi bi-shield-check display-6"></i>
+                    </div>
+                    <h5 class="fw-bold">4. Beheer</h5>
+                    <p class="text-muted small">Wij houden het veilig, up-to-date en snel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Wat <span class="beter">BETER</span> voor je regelt</h2>
+            <span class="section-label d-block text-center" data-aos="fade-up">Wat we doen</span>
+            <h2 class="text-center mb-5" data-aos="fade-up">Van inrichting tot dagelijks beheer</h2>
             <div class="row">
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 border-0 shadow-sm" style="border-top: 5px solid #ed507e !important;">
@@ -414,76 +524,74 @@
 
     <section id="usps" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Waarom <span class="beter">BETER</span> ?</h2>
+            <span class="section-label d-block text-center" data-aos="fade-up">Voordelen</span>
+            <h2 class="text-center mb-5" data-aos="fade-up">Geen verrassingen.<br>Gewoon goed geregeld.</h2>
             <div class="row">
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm" style="border-top: 5px solid #ed507e !important;">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-lock text-primary mb-3" style="font-size: 2rem;"></i>
-                            <h4 class="card-title mb-3">Jij blijft eigenaar</h4>
-                            <p class="card-text text-muted">Geen vendor lock-in. Het Kubernetes-cluster draait bij jouw eigen cloud provider. <span class="beter">BETER</span> beheert het, jij bezit het.</p>
-                        </div>
+                    <div class="usp-card">
+                        <i class="bi bi-lock text-primary mb-3 d-block" style="font-size: 1.75rem;"></i>
+                        <h4>Jij blijft eigenaar</h4>
+                        <p class="text-muted">Geen vendor lock-in. Het Kubernetes-cluster draait bij jouw eigen cloud provider. <span class="beter">BETER</span> beheert het, jij bezit het.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm" style="border-top: 5px solid #ed507e !important;">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-wallet2 text-primary mb-3" style="font-size: 2rem;"></i>
-                            <h4 class="card-title mb-3">Vaste prijs</h4>
-                            <p class="card-text text-muted">Geen uurtje-factuurtje of onverwachte meerkosten. Een vast bedrag per cluster per maand is <span class="beter">BETER</span> voor je portemonee.</p>
-                        </div>
+                    <div class="usp-card">
+                        <i class="bi bi-wallet2 text-primary mb-3 d-block" style="font-size: 1.75rem;"></i>
+                        <h4>Vaste prijs</h4>
+                        <p class="text-muted">Geen uurtje-factuurtje of onverwachte meerkosten. Een vast bedrag per cluster per maand is <span class="beter">BETER</span> voor je portemonee.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm" style="border-top: 5px solid #ed507e !important;">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-people text-primary mb-3" style="font-size: 2rem;"></i>
-                            <h4 class="card-title mb-3">Jouw vaste partner</h4>
-                            <p class="card-text text-muted"><span class="beter">BETER</span> bouwt het niet alleen, maar zorgt ook dat het blijft draaien. Wij zijn jouw platformteam op afstand.</p>
+                    <div class="usp-card">
+                        <i class="bi bi-people text-primary mb-3 d-block" style="font-size: 1.75rem;"></i>
+                        <h4>Jouw vaste partner</h4>
+                        <p class="text-muted"><span class="beter">BETER</span> bouwt het niet alleen, maar zorgt ook dat het blijft draaien. Wij zijn jouw platformteam op afstand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="team" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-label d-block">Wie we zijn</span>
+                <h2 class="mb-2">Het team</h2>
+                <p class="text-muted mb-0">Senior engineers met bewezen track record in Kubernetes, cloud en automatisering.</p>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap" style="gap: 6rem;">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                            <div class="team-photo-wrap"><img src="img/hs/gb.jpeg" alt="Gijsjan Baars" class="team-photo" style="transform: scale(1.4) translateY(12%); transform-origin: center center; object-position: center 85%;"></div>
+                        <div class="team-info">
+                            <h6 class="mb-1" style="color: #ed507e;">Gijsjan Baars</h6>
+                            <p class="text-muted small mb-0 team-bio">Maakt cloudarchitectuur praktisch inzetbaar voor je team.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-photo-wrap"><img src="img/hs/st.jpeg" alt="Sebastiaan Tammer" class="team-photo"></div>
+                        <div class="team-info">
+                            <h6 class="mb-1" style="color: #ed507e;">Sebastiaan Tammer</h6>
+                                <p class="text-muted small mb-0 team-bio">Beveiligt je stack en automatiseert deploys zonder frictie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-photo-wrap"><img src="img/hs/rvr.jpeg" alt="Reinier van Rutten" class="team-photo"></div>
+                        <div class="team-info">
+                            <h6 class="mb-1" style="color: #ed507e;">Reinier van Rutten</h6>
+                                <p class="text-muted small mb-0 team-bio">Zorgt dat je Kubernetes‑omgeving betrouwbaar en onderhoudbaar is.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="process" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">In 4 stappen naar <span class="beter">BETER</span></h2>
-            <div class="row text-center">
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-chat-dots display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">1. Intake</h5>
-                    <p class="text-muted small">We checken samen je huidige situatie en wensen.</p>
-                </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-bricks display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">2. Setup</h5>
-                    <p class="text-muted small">Wij bouwen het Kubernetes cluster volgens onze best practices.</p>
-                </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-rocket-takeoff display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">3. Deploy</h5>
-                    <p class="text-muted small">Jij pushed je code naar Git, en het draait.</p>
-                </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-arrow-repeat display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">4. Beheer</h5>
-                    <p class="text-muted small">Wij houden het veilig, up-to-date en snel.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <section id="faq" class="py-5 bg-light">
         <div class="container">
@@ -561,7 +669,7 @@
         <div class="container text-center" data-aos="zoom-in">
         <h2 class="mb-3">Maak jouw Kubernetes ook BETER!</h2>
             <p class="lead mb-4">We hebben nu ruimte voor een aantal nieuwe teams.<br>Benieuwd of dit bij jullie past? Stuur gerust een berichtje.</p>
-            <a href="mailto:info@betersolutions.nl" class="btn btn-light btn-lg text-primary fw-bold px-5 shadow">Neem contact op</a>
+            <a href="mailto:info@betersolutions.nl" class="btn btn-light btn-lg text-primary fw-bold px-5 py-4 shadow">Neem contact op</a>
         </div>
     </section>
     
