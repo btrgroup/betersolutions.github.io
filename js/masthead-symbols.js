@@ -39,7 +39,7 @@
         var g = document.createElementNS(ns, 'g');
         g.setAttribute('transform',
           'translate(' + cx + ',' + cy + ') rotate(' + rot + ',' + (46 * scale) + ',' + (50.5 * scale) + ') scale(' + scale + ')');
-        g.setAttribute('fill', '#ed507e');
+        g.setAttribute('fill', '#ffffff');
         g.setAttribute('fill-opacity', opacity);
         g.innerHTML = paths.map(function (d) { return '<path d="' + d + '"/>'; }).join('');
         svg.appendChild(g);
