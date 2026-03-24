@@ -10,9 +10,6 @@
     <meta name="author" content="BETER Solutions">
     <link rel="canonical" href="https://www.betersolutions.nl/">
 
-    <!-- Cookiebot Consent Management -->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8b4e237c-803f-4a47-a326-44a5c42c74be" type="text/javascript"></script>
-
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.betersolutions.nl/">
@@ -335,6 +332,58 @@
     </style>
 </head>
 <body>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#131313; color:#fff; padding:1.25rem 1.5rem; font-family:'Open Sans',sans-serif; font-size:0.875rem; box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+        <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem;">
+            <p style="margin:0; flex:1; min-width:200px; line-height:1.6;">
+                We gebruiken cookies om het websiteverkeer te analyseren en je ervaring te verbeteren.
+            </p>
+            <div style="display:flex; gap:0.75rem; flex-shrink:0; flex-wrap:wrap;">
+                <button onclick="setCookieConsent(false)" style="background:transparent; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:0.5rem 1.1rem; border-radius:8px; font-family:'Open Sans',sans-serif; font-size:0.875rem; cursor:pointer;">Weigeren</button>
+                <button onclick="setCookieConsent(true)" style="background:#ed507e; border:none; color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-family:'Open Sans',sans-serif; font-size:0.875rem; font-weight:600; cursor:pointer;">Accepteren</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadAnalytics() {
+            var ga = document.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-TS2NTV4GYH';
+            document.head.appendChild(ga);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-TS2NTV4GYH');
+
+            var hs = document.createElement('script');
+            hs.async = true;
+            hs.defer = true;
+            hs.id = 'hs-script-loader';
+            hs.src = '//js-na1.hs-scripts.com/48140960.js';
+            document.head.appendChild(hs);
+        }
+
+        function setCookieConsent(accepted) {
+            localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'declined');
+            document.getElementById('cookie-banner').style.display = 'none';
+            if (accepted) loadAnalytics();
+        }
+
+        (function() {
+            var consent = localStorage.getItem('cookie_consent');
+            if (consent === 'accepted') {
+                loadAnalytics();
+            } else if (consent === 'declined') {
+                // do nothing
+            } else {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        })();
+    </script>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #131313;">
         <div class="container">
@@ -671,18 +720,6 @@
         });
     </script>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TS2NTV4GYH" data-cookieconsent="statistics"></script>
-    <script type="text/plain" data-cookieconsent="statistics">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TS2NTV4GYH');
-    </script>
-
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/plain" data-cookieconsent="marketing" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/48140960.js"></script>
-    <!-- End of HubSpot Embed Code -->
 
     <!-- Random BETER symbol scatter in masthead -->
     <script src="js/masthead-symbols.js" defer></script>
