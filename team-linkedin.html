@@ -43,7 +43,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .tagline {
@@ -83,6 +83,21 @@
             z-index: 1;
         }
 
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .team-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ed507e;
+            letter-spacing: 0.06em;
+        }
+
         .team-photo-wrap {
             width: 290px;
             height: 500px;
@@ -113,14 +128,23 @@
     </div>
 
     <div class="team">
-        <div class="team-photo-wrap">
-            <img src="img/hs/ht-gjb-01.png" alt="Gijsjan Baars" class="team-photo">
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="img/hs/ht-gjb-01.png" alt="Gijsjan Baars" class="team-photo">
+            </div>
+            <span class="team-name">Gijsjan</span>
         </div>
-        <div class="team-photo-wrap">
-            <img src="img/hs/hs-st-01.png" alt="Sebastiaan Tammer" class="team-photo" style="object-position: 30% top;">
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="img/hs/hs-st-01.png" alt="Sebastiaan Tammer" class="team-photo" style="object-position: 30% top;">
+            </div>
+            <span class="team-name">Sebastiaan</span>
         </div>
-        <div class="team-photo-wrap">
-            <img src="img/hs/hs-rvr-01.png" alt="Reinier van Rutten" class="team-photo">
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="img/hs/hs-rvr-01.png" alt="Reinier van Rutten" class="team-photo">
+            </div>
+            <span class="team-name">Reinier</span>
         </div>
     </div>
 
