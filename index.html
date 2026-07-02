@@ -184,6 +184,41 @@
             margin-bottom: 0.75rem;
         }
 
+        .partner-card {
+            border: 2px solid rgba(237, 80, 126, 0.15);
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
+            border-color: #ed507e;
+        }
+
+        .partner-logo {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+        }
+
+        .partner-visit {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ed507e;
+            letter-spacing: 0.02em;
+        }
+
+        .partner-visit i {
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-visit i {
+            transform: translate(3px, -3px);
+        }
+
         .usp-card {
             padding: 32px 28px;
             border-left: 3px solid #ed507e;
@@ -614,7 +649,22 @@
         </div>
     </section>
 
-    <section id="faq" class="py-5 bg-white">
+    <section id="partners" class="py-5 bg-white">
+        <div class="container">
+            <span class="section-label d-block text-center" data-aos="fade-up">Samen sterker</span>
+            <h2 class="text-center mb-5" data-aos="fade-up">Onze partner.</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.kroescontrol.nl" target="_blank" rel="noopener noreferrer" class="partner-card d-flex flex-column align-items-center justify-content-center text-decoration-none p-4 h-100">
+                        <img src="img/kc-logo.svg" alt="KroesControl" class="partner-logo mb-3">
+                        <span class="partner-visit">Bezoek kroescontrol.nl <i class="bi bi-box-arrow-up-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Veelgestelde vragen.</h2>
             <div class="row justify-content-center">
