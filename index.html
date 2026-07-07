@@ -198,10 +198,23 @@
             border-color: #ed507e;
         }
 
+        .partner-logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90px;
+            margin-bottom: 0.75rem;
+        }
+
         .partner-logo {
             max-width: 260px;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .partner-logo-sm {
+            max-width: 160px;
         }
 
         .partner-visit {
@@ -652,12 +665,22 @@
     <section id="partners" class="py-5 bg-white">
         <div class="container">
             <span class="section-label d-block text-center" data-aos="fade-up">Samen sterker</span>
-            <h2 class="text-center mb-5" data-aos="fade-up">Onze partner.</h2>
-            <div class="row justify-content-center">
+            <h2 class="text-center mb-5" data-aos="fade-up">Onze partners.</h2>
+            <div class="row justify-content-center g-4">
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a href="https://www.kroescontrol.nl" target="_blank" rel="noopener noreferrer" class="partner-card d-flex flex-column align-items-center justify-content-center text-decoration-none p-4 h-100">
-                        <img src="img/kc-logo.svg" alt="KroesControl" class="partner-logo mb-3">
+                        <div class="partner-logo-wrap">
+                            <img src="img/kc-logo.svg" alt="KroesControl" class="partner-logo">
+                        </div>
                         <span class="partner-visit">Bezoek kroescontrol.nl <i class="bi bi-box-arrow-up-right"></i></span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://www.thalassa.cloud" target="_blank" rel="noopener noreferrer" class="partner-card d-flex flex-column align-items-center justify-content-center text-decoration-none p-4 h-100">
+                        <div class="partner-logo-wrap">
+                            <img src="img/thalassa-cloud-logo-stacked-black-blue-whitebackground.png" alt="Thalassa Cloud" class="partner-logo partner-logo-sm">
+                        </div>
+                        <span class="partner-visit">Bezoek thalassa.cloud <i class="bi bi-box-arrow-up-right"></i></span>
                     </a>
                 </div>
             </div>
