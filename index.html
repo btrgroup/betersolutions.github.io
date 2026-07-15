@@ -306,81 +306,76 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ed507e'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
 
-        /* Process Steps Styles */
-        .step-circle {
-            width: 80px; 
-            height: 80px;
-            background: #fff;
-            border: 2px solid #ed507e;
-            color: #ed507e;
-            position: relative;
-            z-index: 2;
+        /* Stack Showcase Styles */
+        .stack-showcase {
+            background: #ed507e;
         }
 
-        /* Animated highlight effect for steps */
-        @keyframes stepHighlight {
-            0% {
-                background: #fff;
-                color: #ed507e;
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(237, 80, 126, 0);
-            }
-            12.5% {
-                background: #ed507e;
-                color: #fff;
-                transform: scale(1.1);
-                box-shadow: 0 0.5rem 1rem rgba(237, 80, 126, 0.3);
-            }
-            25% {
-                background: #fff;
-                color: #ed507e;
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(237, 80, 126, 0);
-            }
-            100% {
-                background: #fff;
-                color: #ed507e;
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(237, 80, 126, 0);
-            }
+        .stack-showcase .section-label {
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .step-item .step-circle {
-            animation: stepHighlight 8s ease-in-out infinite;
+        .stack-logos {
+            gap: 0.5rem 3rem;
         }
 
-        .step-item:nth-child(1) .step-circle {
-            animation-delay: 3s;
+        .stack-row-break {
+            flex-basis: 100%;
+            height: 0;
         }
 
-        .step-item:nth-child(2) .step-circle {
-            animation-delay: 5s;
+        .stack-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            width: 90px;
+            text-decoration: none;
         }
 
-        .step-item:nth-child(3) .step-circle {
-            animation-delay: 7s;
+        .stack-logo {
+            height: 44px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        .step-item:nth-child(4) .step-circle {
-            animation-delay: 9s;
+        .stack-item:hover .stack-logo {
+            opacity: 1;
+            transform: translateY(-3px);
         }
 
-        @media (min-width: 768px) {
-            .step-item {
-                position: relative;
-            }
-            .step-item::before {
-                content: '';
-                position: absolute;
-                top: 40px;
-                left: 50%;
-                width: 100%;
-                height: 2px;
-                background-color: #dee2e6;
-                z-index: 1;
-            }
-            .step-item:last-child::before {
+        .stack-logo-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: #fff;
+            opacity: 0;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .stack-item:hover .stack-logo-name {
+            opacity: 0.9;
+        }
+
+        .stack-logo-link .stack-logo {
+            opacity: 0.6;
+        }
+
+        .stack-logo-link:hover .stack-logo {
+            opacity: 1;
+        }
+
+        /* No hover on touch devices, so don't force a fixed 7/7 row split there either */
+        @media (max-width: 991.98px) {
+            .stack-row-break {
                 display: none;
+            }
+
+            .stack-logo-name,
+            .stack-item:hover .stack-logo-name {
+                opacity: 0.85;
             }
         }
     </style>
@@ -456,7 +451,7 @@
                         <a class="nav-link" href="#services">Diensten</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#process">Aanpak</a>
+                        <a class="nav-link" href="#stack">Stack</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
@@ -587,38 +582,67 @@
 
 
 
-    <section id="process" class="py-5 bg-white">
+    <section id="stack" class="pt-4 pb-2 stack-showcase">
         <div class="container">
-            <span class="section-label d-block text-center" data-aos="fade-up">Hoe het werkt</span>
-            <h2 class="text-center mb-5" data-aos="fade-up">In vier stappen operationeel.</h2>
-            <div class="row text-center">
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-chat-dots display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">1. Intake</h5>
-                    <p class="text-muted small">We checken samen je situatie en wensen.</p>
+            <span class="section-label d-block text-center" data-aos="fade-up">Technologie</span>
+            <h2 class="text-center mb-5 text-white" data-aos="fade-up">Cloud Native Tooling.</h2>
+            <div class="d-flex flex-wrap justify-content-center align-items-start stack-logos" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://landscape.cncf.io/" target="_blank" rel="noopener noreferrer" class="stack-item stack-logo-link" aria-label="Bekijk het volledige CNCF landscape">
+                    <img src="img/logos/cncf.svg" alt="CNCF" class="stack-logo">
+                    <span class="stack-logo-name">CNCF Landscape</span>
+                </a>
+                <div class="stack-item">
+                    <img src="img/logos/kubernetes.svg" alt="Kubernetes" class="stack-logo">
+                    <span class="stack-logo-name">Kubernetes</span>
                 </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-gear-wide-connected display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">2. Inrichting</h5>
-                    <p class="text-muted small">Wij bouwen volgens onze best practices.</p>
+                <div class="stack-item">
+                    <img src="img/logos/aws.svg" alt="AWS" class="stack-logo">
+                    <span class="stack-logo-name">AWS</span>
                 </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-flag-fill display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">3. Oplevering</h5>
-                    <p class="text-muted small">Alles staat klaar en is getest. Jij gaat live.</p>
+                <div class="stack-item">
+                    <img src="img/logos/azure.svg" alt="Azure" class="stack-logo">
+                    <span class="stack-logo-name">Azure</span>
                 </div>
-                <div class="col-md-3 mb-4 step-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 step-circle">
-                        <i class="bi bi-shield-check display-6"></i>
-                    </div>
-                    <h5 class="fw-bold">4. Beheer</h5>
-                    <p class="text-muted small">Wij houden het veilig, up-to-date en snel.</p>
+                <div class="stack-item">
+                    <img src="img/logos/gcp.svg" alt="Google Cloud" class="stack-logo">
+                    <span class="stack-logo-name">Google Cloud</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/terraform.svg" alt="Terraform" class="stack-logo">
+                    <span class="stack-logo-name">Terraform</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/helm.svg" alt="Helm" class="stack-logo">
+                    <span class="stack-logo-name">Helm</span>
+                </div>
+                <div class="stack-row-break"></div>
+                <div class="stack-item">
+                    <img src="img/logos/argo.svg" alt="Argo" class="stack-logo">
+                    <span class="stack-logo-name">Argo</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/github.svg" alt="GitHub" class="stack-logo">
+                    <span class="stack-logo-name">GitHub</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/prometheus.svg" alt="Prometheus" class="stack-logo">
+                    <span class="stack-logo-name">Prometheus</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/grafana.svg" alt="Grafana" class="stack-logo">
+                    <span class="stack-logo-name">Grafana</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/certmanager.svg" alt="cert-manager" class="stack-logo">
+                    <span class="stack-logo-name">cert-manager</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/kyverno.svg" alt="Kyverno" class="stack-logo">
+                    <span class="stack-logo-name">Kyverno</span>
+                </div>
+                <div class="stack-item">
+                    <img src="img/logos/postgresql.svg" alt="PostgreSQL" class="stack-logo">
+                    <span class="stack-logo-name">PostgreSQL</span>
                 </div>
             </div>
         </div>
