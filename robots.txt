@@ -4,4 +4,5 @@ Allow: /$
 Allow: /index.html
 Allow: /img/
 Allow: /js/
+Allow: /css/
 Allow: /manifest.json
