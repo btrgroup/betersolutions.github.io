@@ -233,6 +233,17 @@ h1, h2, h3, h4, h5 {
     color: #ed507e;
 }
 
+.team-linkedin {
+    color: #ed507e;
+    opacity: 0.7;
+    margin-left: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.team-linkedin:hover {
+    opacity: 1;
+}
+
 .team-photo-wrap {
     width: 160px;
     height: 213px; /* 3:4 aspect ratio */
@@ -281,33 +292,51 @@ h1, h2, h3, h4, h5 {
 
 /* Tech Showcase Styles */
 .tech-showcase {
-    background: #ed507e;
+    background: #131313;
 }
 
 .tech-showcase .section-label {
     color: rgba(255, 255, 255, 0.85);
 }
 
-.tech-logos {
-    gap: 0.5rem 3rem;
+.tech-ticker {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-.tech-row-break {
-    flex-basis: 100%;
-    height: 0;
+.tech-ticker-track {
+    display: flex;
+    align-items: flex-start;
+    width: max-content;
+    gap: 2.25rem;
+    padding: 0 1.125rem;
+    animation: tech-ticker-scroll 55s linear infinite;
+    will-change: transform;
+}
+
+.tech-ticker:hover .tech-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes tech-ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .tech-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    width: 90px;
+    gap: 0.35rem;
+    width: 68px;
+    flex-shrink: 0;
     text-decoration: none;
 }
 
 .tech-logo {
-    height: 44px;
+    height: 32px;
     width: auto;
     opacity: 0.85;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -323,13 +352,13 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
     letter-spacing: 0.03em;
     color: #fff;
-    opacity: 0;
+    opacity: 0.75;
     text-align: center;
     transition: opacity 0.3s ease;
 }
 
 .tech-item:hover .tech-logo-name {
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .tech-logo-link .tech-logo {
@@ -340,12 +369,40 @@ h1, h2, h3, h4, h5 {
     opacity: 1;
 }
 
-/* No hover on touch devices, so don't force a fixed 7/7 row split there either */
-@media (max-width: 991.98px) {
-    .tech-row-break {
-        display: none;
+@media (prefers-reduced-motion: reduce) {
+    .tech-ticker-track {
+        animation: none;
     }
+}
 
+/* Certification Badges */
+.cert-badges {
+    gap: 1.5rem 3rem;
+}
+
+.cert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90px;
+}
+
+.cert-logo {
+    height: 56px;
+    width: auto;
+    max-width: 90px;
+}
+
+.cert-logo-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #6c757d;
+}
+
+/* No hover on touch devices */
+@media (max-width: 991.98px) {
     .tech-logo-name,
     .tech-item:hover .tech-logo-name {
         opacity: 0.85;
