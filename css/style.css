@@ -107,6 +107,26 @@ h1, h2, h3, h4, h5 {
 
 .masthead .section-label {
     font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.masthead-logo {
+    height: 2em;
+    position: relative;
+    top: -0.1em;
+}
+
+.site-navbar {
+    background-color: #131313;
+}
+
+.intro-copy {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.team-cards {
+    gap: 6rem;
 }
 
 .bg-primary {

@@ -150,6 +150,14 @@
         },
         {
           "@type": "Question",
+          "name": "Verzorgen jullie ook trainingen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Naast advies en beheer geven we ook trainingen en workshops, bijvoorbeeld over Kubernetes, GitOps of cloud-architectuur. Zo bouwt jouw team zelf kennis op, of werken we gericht toe naar minder afhankelijkheid van ons."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Hoe snel kunnen jullie starten?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -179,7 +187,7 @@
     <script src="js/cookie-consent.js" defer></script>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #131313;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="img/noBgColor.svg" alt="BETER Logo" height="40">
@@ -213,10 +221,10 @@
 
         <div class="container pt-3 pb-4" data-aos="fade-up">
             <h1 class="display-4 mb-3 mt-2">
-    <img src="img/noBgWhitePink.svg" alt="" style="height: 2.0em; position: relative; top: -0.1em;">
+    <img src="img/noBgWhitePink.svg" alt="" class="masthead-logo">
     <span class="visually-hidden">BETER — Platformteam as a Service</span>
             </h1>
-            <span class="section-label" style="color: rgba(255, 255, 255, 0.8);">Platformteam as a Service</span>
+            <span class="section-label">Platformteam as a Service</span>
         </div>
     </header>
 
@@ -256,7 +264,7 @@
                 <div class="col-lg-9">
                     <span class="section-label d-block text-center">Wat is BETER</span>
                     <h2 class="text-center mb-4">Platformteam as a Service.</h2>
-                    <div class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+                    <div class="text-muted intro-copy">
                         <p><strong><span class="beter">BETER</span> is jouw platformteam als dienst.</strong> Een ervaren team dat cloud- en Kubernetes-platformen inricht, beheert en doorontwikkelt. Zo beschik je over platformexpertise wanneer je die nodig hebt, zonder direct een volledig intern platformteam op te bouwen.</p>
                         <p><strong>We werken in jouw eigen omgeving, bij de provider van jouw keuze.</strong> Van AWS en Azure tot GCP of on-premises. We maken gebruik van Infrastructure as Code, CI/CD, GitOps en open source tooling.</p>
                         <p><strong>Jouw platform stabiel, veilig en up-to-date houden</strong> met updates, upgrades en patches is een belangrijk onderdeel van ons werk. Dat kan in samenwerking met jouw interne team of wij kunnen het platformbeheer volledig overnemen.</p>
@@ -455,7 +463,7 @@
                 <p class="text-muted mb-0">Senior engineers met bewezen track record in Kubernetes, cloud en automatisering. </p>
                 <p class="text-muted mb-0">Ervaring bij organisaties in verschillende sectoren. Onder andere in finance, zorg, energie, semioverheid, media, retail en automotive.</p>
             </div>
-            <div class="d-flex justify-content-center flex-wrap" style="gap: 6rem;">
+            <div class="d-flex justify-content-center flex-wrap team-cards">
                     <div data-aos="fade-up" data-aos-delay="100">
                         <div class="team-card">
                             <div class="team-photo-wrap"><img src="img/hs/ht-gjb-01.png" alt="Gijsjan Baars" class="team-photo"></div>
@@ -614,10 +622,22 @@
                         <div class="accordion-item border-bottom">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed shadow-none fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                                    Hoe snel kunnen jullie starten?
+                                    Verzorgen jullie ook trainingen?
                                 </button>
                             </h3>
                             <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Ja. Naast advies en beheer geven we ook trainingen en workshops, bijvoorbeeld over Kubernetes, GitOps of cloud-architectuur. Zo bouwt jouw team zelf kennis op, of werken we gericht toe naar minder afhankelijkheid van ons.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-bottom">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    Hoe snel kunnen jullie starten?
+                                </button>
+                            </h3>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
                                     Na een kort kennismakingsgesprek kunnen we snel schakelen. We starten met een intake om je situatie en wensen in kaart te brengen en maken daarna gezamenlijk een passende planning.
                                 </div>
