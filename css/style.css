@@ -336,13 +336,7 @@ h1, h2, h3, h4, h5 {
 .tech-logo {
     height: 32px;
     width: auto;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.tech-item:hover .tech-logo {
     opacity: 1;
-    transform: translateY(-3px);
 }
 
 .tech-logo-name {
@@ -352,19 +346,6 @@ h1, h2, h3, h4, h5 {
     color: #fff;
     opacity: 0.75;
     text-align: center;
-    transition: opacity 0.3s ease;
-}
-
-.tech-item:hover .tech-logo-name {
-    opacity: 1;
-}
-
-.tech-logo-link .tech-logo {
-    opacity: 0.6;
-}
-
-.tech-logo-link:hover .tech-logo {
-    opacity: 1;
 }
 
 /* Certification Badges */
@@ -393,10 +374,3 @@ h1, h2, h3, h4, h5 {
     color: #6c757d;
 }
 
-/* No hover on touch devices */
-@media (max-width: 991.98px) {
-    .tech-logo-name,
-    .tech-item:hover .tech-logo-name {
-        opacity: 0.85;
-    }
-}
