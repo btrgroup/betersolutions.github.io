@@ -312,19 +312,15 @@ h1, h2, h3, h4, h5 {
     width: max-content;
     gap: 2.25rem;
     padding: 0 1.125rem;
-    animation: tech-ticker-scroll 55s linear infinite;
     will-change: transform;
+    touch-action: pan-y;
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .tech-ticker:hover .tech-ticker-track {
-        animation-play-state: paused;
-    }
-}
-
-@keyframes tech-ticker-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+.tech-ticker-track.is-dragging {
+    cursor: grabbing;
 }
 
 .tech-item {
