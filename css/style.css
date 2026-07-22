@@ -322,6 +322,8 @@ h1, h2, h3, h4, h5 {
 .tech-ticker {
     overflow: hidden;
     width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
