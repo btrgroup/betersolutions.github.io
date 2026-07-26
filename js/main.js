@@ -16,9 +16,7 @@ document.querySelectorAll('[data-aos]').forEach(function(el) {
     aosObserver.observe(el);
 });
 
-// Smooth-scroll nav links to their target ourselves, offset for the fixed navbar.
-// Bootstrap's own data-bs-smooth-scroll ignores the navbar height and lands sections
-// partly behind it, and has no offset option to correct that.
+// Smooth-scroll nav links to their target, offset for the fixed navbar
 document.querySelectorAll('#mainNavList .nav-link').forEach(function (link) {
     link.addEventListener('click', function (e) {
         var targetId = link.getAttribute('href');
@@ -31,20 +29,34 @@ document.querySelectorAll('#mainNavList .nav-link').forEach(function (link) {
     });
 });
 
-// Contact is too short to ever trigger scrollspy's intersection band on its own,
-// so highlight it manually once the page is scrolled to the very bottom.
-var contactNavLink = document.querySelector('.navbar-nav .nav-link[href="#contact"]');
-if (contactNavLink) {
-    window.addEventListener('scroll', function () {
-        var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-        if (atBottom) {
-            document.querySelectorAll('.navbar-nav .nav-link.active').forEach(function (el) {
-                el.classList.remove('active');
-            });
-            contactNavLink.classList.add('active');
-        } else {
-            contactNavLink.classList.remove('active');
+// Highlight the nav-link whose section covers a fixed reference line
+var navSections = Array.prototype.slice.call(document.querySelectorAll('#mainNavList .nav-link'))
+    .map(function (link) {
+        return { link: link, section: document.querySelector(link.getAttribute('href')) };
+    })
+    .filter(function (item) { return item.section; });
+
+function updateActiveNavLink() {
+    var referenceY = 110; // px from viewport top, clears the fixed navbar
+    var current = null;
+
+    navSections.forEach(function (item) {
+        var rect = item.section.getBoundingClientRect();
+        if (rect.top <= referenceY && rect.bottom > referenceY) {
+            current = item;
         }
     });
+
+    if (!current && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        current = navSections[navSections.length - 1];
+    }
+
+    navSections.forEach(function (item) {
+        item.link.classList.toggle('active', item === current);
+    });
 }
+
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('resize', updateActiveNavLink);
+updateActiveNavLink();
 
