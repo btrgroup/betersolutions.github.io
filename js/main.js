@@ -38,17 +38,16 @@ var navSections = Array.prototype.slice.call(document.querySelectorAll('#mainNav
 
 function updateActiveNavLink() {
     var referenceY = 110; // px from viewport top, clears the fixed navbar
-    var current = null;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    var current = atBottom ? navSections[navSections.length - 1] : null;
 
-    navSections.forEach(function (item) {
-        var rect = item.section.getBoundingClientRect();
-        if (rect.top <= referenceY && rect.bottom > referenceY) {
-            current = item;
-        }
-    });
-
-    if (!current && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
-        current = navSections[navSections.length - 1];
+    if (!current) {
+        navSections.forEach(function (item) {
+            var rect = item.section.getBoundingClientRect();
+            if (rect.top <= referenceY && rect.bottom > referenceY) {
+                current = item;
+            }
+        });
     }
 
     navSections.forEach(function (item) {
