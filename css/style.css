@@ -128,6 +128,35 @@ h1, h2, h3, h4, h5 {
     background-color: #131313;
 }
 
+.navbar-logo {
+    height: 30px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+    .navbar-logo {
+        height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1rem;
+    }
+}
+
+.navbar-nav .nav-link.active {
+    color: #ed507e;
+    font-weight: 600;
+}
+
 
 .intro-copy {
     font-size: 1.1rem;
@@ -143,6 +172,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-primary {
+    --bs-btn-bg: #ed507e;
+    --bs-btn-border-color: #ed507e;
+    --bs-btn-hover-bg: #f27ea0;
+    --bs-btn-hover-border-color: #f27ea0;
+    --bs-btn-active-bg: #d63f6a;
+    --bs-btn-active-border-color: #d63f6a;
+    --bs-btn-focus-shadow-rgb: 237, 80, 126;
+    --bs-btn-disabled-bg: #ed507e;
+    --bs-btn-disabled-border-color: #ed507e;
     background-color: #ed507e;
     border-color: #ed507e;
 }

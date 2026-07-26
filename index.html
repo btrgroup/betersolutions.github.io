@@ -167,7 +167,7 @@
     </script>
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNavList" data-bs-root-margin="-90px 0px -60%" tabindex="0">
 
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="cookie-banner">
@@ -185,33 +185,28 @@
     <script src="js/cookie-consent.js" defer></script>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-dark-bg">
-        <div class="container">
+    <nav class="navbar navbar-dark fixed-top site-dark-bg">
+        <div class="container d-flex align-items-center justify-content-between flex-nowrap">
             <a class="navbar-brand" href="#">
-                <img src="img/noBgColor.svg" alt="BETER Logo" height="40">
+                <img src="img/noBgColor.svg" alt="BETER Logo" class="navbar-logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#expertises">Expertise</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Diensten</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white px-4 py-2 ms-3" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="navbar-nav flex-row flex-nowrap gap-1 gap-lg-4 mb-0" id="mainNavList">
+                <li class="nav-item">
+                    <a class="nav-link" href="#expertises">Expertise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Diensten</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -226,7 +221,8 @@
         </div>
     </header>
 
-    <section id="expertises" class="py-5 bg-white">
+    <div id="expertises">
+    <section class="py-5 bg-white">
         <div class="container">
             <span class="section-label d-block text-center" data-aos="fade-up">Onze expertise</span>
             <h2 class="text-center mb-5" data-aos="fade-up">Alles Cloud Native.</h2>
@@ -256,7 +252,7 @@
         </div>
     </section>
 
-    <section id="intro" class="py-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
@@ -273,8 +269,10 @@
             </div>
         </div>
     </section>
+    </div>
 
-    <section id="services" class="py-5 bg-white">
+    <div id="services">
+    <section class="py-5 bg-white">
         <div class="container">
             <span class="section-label d-block text-center" data-aos="fade-up">Onze diensten</span>
             <h2 class="text-center mb-5" data-aos="fade-up">Van advies tot beheer.</h2>
@@ -301,7 +299,7 @@
         </div>
     </section>
 
-    <section id="tech" class="py-4 tech-showcase">
+    <section class="py-4 tech-showcase">
         <div class="container">
             <span class="section-label d-block text-center mb-4" data-aos="fade-up">Gebruikte technologieën en tooling</span>
         </div>
@@ -487,7 +485,7 @@
         </div>
     </section>
 
-    <section id="usps" class="py-5 bg-white">
+    <section class="py-5 bg-white">
         <div class="container">
             <span class="section-label d-block text-center" data-aos="fade-up">Voordelen</span>
             <h2 class="text-center mb-5" data-aos="fade-up">Gewoon goed geregeld.</h2>
@@ -516,8 +514,10 @@
             </div>
         </div>
     </section>
+    </div>
 
-    <section id="team" class="py-5 bg-light">
+    <div id="team">
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="section-label d-block">Wie wij zijn</span>
@@ -566,7 +566,7 @@
         </div>
     </section>
 
-    <section id="certifications" class="py-5 bg-white">
+    <section class="py-5 bg-white">
         <div class="container text-center" data-aos="fade-up">
             <span class="section-label d-block">Bewezen expertise</span>
             <h2 class="mb-4">Certificeringen.</h2>
@@ -602,8 +602,10 @@
             </div>
         </div>
     </section>
+    </div>
 
-    <section id="faq" class="py-5 bg-light">
+    <div id="faq">
+    <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Veelgestelde vragen.</h2>
             <div class="row justify-content-center">
@@ -711,7 +713,7 @@
         </div>
     </section>
 
-    <section id="partners" class="py-5 bg-white">
+    <section class="py-5 bg-white">
         <div class="container">
             <span class="section-label d-block text-center" data-aos="fade-up">Samen sterker</span>
             <h2 class="text-center mb-5" data-aos="fade-up">Onze partners.</h2>
@@ -735,6 +737,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <section id="contact" class="py-5 bg-primary text-white">
         <div class="container text-center" data-aos="zoom-in">

@@ -16,12 +16,20 @@ document.querySelectorAll('[data-aos]').forEach(function(el) {
     aosObserver.observe(el);
 });
 
-// Close mobile nav when a link is clicked
-document.querySelectorAll('#mainNav .nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-        var nav = document.getElementById('mainNav');
-        if (nav.classList.contains('show')) {
-            bootstrap.Collapse.getInstance(nav).hide();
+// Contact is too short to ever trigger scrollspy's intersection band on its own,
+// so highlight it manually once the page is scrolled to the very bottom.
+var contactNavLink = document.querySelector('.navbar-nav .nav-link[href="#contact"]');
+if (contactNavLink) {
+    window.addEventListener('scroll', function () {
+        var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        if (atBottom) {
+            document.querySelectorAll('.navbar-nav .nav-link.active').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            contactNavLink.classList.add('active');
+        } else {
+            contactNavLink.classList.remove('active');
         }
     });
-});
+}
+
