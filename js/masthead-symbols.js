@@ -1,11 +1,8 @@
 (function () {
-  var masthead = document.querySelector('.masthead');
-  if (!masthead) return;
+  var containers = document.querySelectorAll('.masthead, #contact');
+  if (!containers.length) return;
 
   var ns = 'http://www.w3.org/2000/svg';
-  var svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('class', 'deco-symbols-svg');
-  svg.setAttribute('aria-hidden', 'true');
 
   var paths = [
     'M47.1963 0.544061C46.3396 0.0646223 45.2877 0.062673 44.4291 0.538936L2.41444 23.8443C1.53931 24.3297 0.998535 25.2376 0.998535 26.2215V73.2967C0.998535 74.2655 1.52309 75.162 2.37728 75.6529L7.9207 78.8388C9.78388 79.9095 12.1317 78.5958 12.1317 76.4825V31.9556C12.1317 30.9805 12.6631 30.0792 13.526 29.5905L51.8583 7.88312C53.7229 6.82725 53.7159 4.19246 51.8459 3.14597L47.1963 0.544061Z',
@@ -15,44 +12,55 @@
     'M38.0962 43.6175C37.2333 44.1061 36.702 45.0074 36.702 45.9825V52.8017C36.702 53.7805 37.2372 54.6846 38.1053 55.1719L43.1332 57.9947C43.9961 58.4792 45.0573 58.4785 45.9196 57.993L88.9425 33.7652C89.822 33.2699 90.3578 32.3474 90.3423 31.355L90.2614 26.1866C90.2463 25.2215 89.7117 24.3357 88.855 23.8563L82.2727 20.1729C81.4082 19.6891 80.3458 19.6918 79.4838 20.1799L38.0962 43.6175Z'
   ];
 
-  function build() {
-    svg.innerHTML = '';
-    var W = masthead.offsetWidth;
-    var H = masthead.offsetHeight;
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  var builders = [];
 
-    // Grid-based placement: one symbol per cell with small jitter → no overlap
-    var cellSize = 90;
-    var cols = Math.ceil(W / cellSize);
-    var rows = Math.ceil(H / cellSize);
-    var jitter = cellSize * 0.3;
+  containers.forEach(function (container) {
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('class', 'deco-symbols-svg');
+    svg.setAttribute('aria-hidden', 'true');
 
-    for (var r = 0; r < rows; r++) {
-      for (var c = 0; c < cols; c++) {
-        var cx = c * cellSize + cellSize / 2 + (Math.random() - 0.5) * jitter * 2;
-        var cy = r * cellSize + cellSize / 2 + (Math.random() - 0.5) * jitter * 2;
-        var sizePx = 28 + Math.random() * 22;   // 28–50px
-        var scale = sizePx / 92;
-        var rot = (Math.random() - 0.5) * 60;
-        var opacity = (0.04 + Math.random() * 0.07).toFixed(3);  // 0.04–0.11
+    function build() {
+      svg.innerHTML = '';
+      var W = container.offsetWidth;
+      var H = container.offsetHeight;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
 
-        var g = document.createElementNS(ns, 'g');
-        g.setAttribute('transform',
-          'translate(' + cx + ',' + cy + ') rotate(' + rot + ',' + (46 * scale) + ',' + (50.5 * scale) + ') scale(' + scale + ')');
-        g.setAttribute('fill', '#ffffff');
-        g.setAttribute('fill-opacity', opacity);
-        g.innerHTML = paths.map(function (d) { return '<path d="' + d + '"/>'; }).join('');
-        svg.appendChild(g);
+      // Grid-based placement: one symbol per cell with small jitter → no overlap
+      var cellSize = 90;
+      var cols = Math.ceil(W / cellSize);
+      var rows = Math.ceil(H / cellSize);
+      var jitter = cellSize * 0.3;
+
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          var cx = c * cellSize + cellSize / 2 + (Math.random() - 0.5) * jitter * 2;
+          var cy = r * cellSize + cellSize / 2 + (Math.random() - 0.5) * jitter * 2;
+          var sizePx = 28 + Math.random() * 22;   // 28–50px
+          var scale = sizePx / 92;
+          var rot = (Math.random() - 0.5) * 60;
+          var opacity = (0.04 + Math.random() * 0.07).toFixed(3);  // 0.04–0.11
+
+          var g = document.createElementNS(ns, 'g');
+          g.setAttribute('transform',
+            'translate(' + cx + ',' + cy + ') rotate(' + rot + ',' + (46 * scale) + ',' + (50.5 * scale) + ') scale(' + scale + ')');
+          g.setAttribute('fill', '#ffffff');
+          g.setAttribute('fill-opacity', opacity);
+          g.innerHTML = paths.map(function (d) { return '<path d="' + d + '"/>'; }).join('');
+          svg.appendChild(g);
+        }
       }
     }
-  }
 
-  build();
-  masthead.insertBefore(svg, masthead.firstChild);
+    build();
+    container.insertBefore(svg, container.firstChild);
+    builders.push(build);
+  });
 
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(build, 200);
+    resizeTimer = setTimeout(function () {
+      builders.forEach(function (build) { build(); });
+    }, 200);
   });
 })();

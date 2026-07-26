@@ -1,4 +1,4 @@
-// Scroll-in animations (replaces AOS library)
+// Scroll-in animations
 document.querySelectorAll('[data-aos-delay]').forEach(function(el) {
     el.style.setProperty('--aos-delay', el.getAttribute('data-aos-delay'));
 });
