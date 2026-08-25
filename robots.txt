@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /
 Allow: /$
 Allow: /index.html
+Allow: /privacy.html
 Allow: /img/
 Allow: /js/
 Allow: /css/
